@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    width: 100%;
+  }
+  
+  body {
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .clock {
+    height: 20vh;
+    color: white;
+    font-size: 22vh;
+    font-family: sans-serif;
+    line-height: 20.4vh;
+    display: flex;
+    position: relative;
+    /*background: green;*/
+    overflow: hidden;
+  }
+  
+  .clock::before, .clock::after {
+    content: '';
+    width: 7ch;
+    height: 3vh;
+    background: linear-gradient(to top, transparent, black);
+    position: absolute;
+    z-index: 2;
+  }
+  
+  .clock::after {
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent, black);
+  }
+  
+  .clock > div {
+    display: flex;
+  }
+  
+  .tick {
+    line-height: 17vh;
+  }
+  
+  .tick-hidden {
+    opacity: 0;
+  }
+  
+  .move {
+    animation: move linear 1s infinite;
+  }
+  
+  @keyframes move {
+    from {
+      transform: translateY(0vh);
+    }
+    to {
+      transform: translateY(-20vh);
+    }
+  }
+  
+  
+
+.navbar {
+    width: 200px;
+    background-color: #333;
+    height: 55vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-top: 15%;
+  }
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar ul li {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
+    font-size: x-large;
+    position: center;
+    margin-top: 20%;
+    margin-bottom: 10%;
+}
+
+.navbar ul li a.active,
+.navbar ul li a:hover {
+    background-color: #555;
+}
+
+.content {
+    margin-left: 220px;
+    padding: 20px;
+}
